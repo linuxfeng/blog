@@ -29,3 +29,16 @@
     D/androidNdkShare( 4438): Interface is running
     D/androidNdkShare( 4438): IP address is 10.40.78.162
     D/test_exec( 4438): getIP return iRet=[0], device_ipaddr[10.40.78.162]
+
+###关于日志
+
+log.h文件内是对logcat日志的封装，可以按级别直接把日志打印到logcat的内存里，然后再用logcat工具查看。如果只是想简单的把日志打印到文件里面，下面的简单代码可能是有效的方法：
+
+    #define WRITE_LOG(s, ...) do { \
+    FILE *f = fopen("/data/local/tmp/log.txt", "a+"); \
+      fprintf(f, s, __VA_ARGS__); \
+      fflush(f); \
+      fclose(f); \
+    } while (0)
+
+如果想要更加全面的日志系统，可以移植log4c或者是zlog过来，进行日志的管理。
