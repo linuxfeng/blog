@@ -5,13 +5,13 @@
 * PC环境：```Linux ub 3.11.0-12-generic #19-Ubuntu SMP Wed Oct 9 16:12:00 UTC 2013 i686 i686 i686 GNU/Linux```
 * Android NDK环境：```android-ndk-r5b```
 * PC主机关于ndk的环境变量：
-
-    export NDK_HOME=$HOME/tar/android-ndk-r5b
-    export LINUX_ANDROIDEABI=$NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin
-    export PATH=$PATH:$NDK_HOME:$LINUX_ANDROIDEABI
-    export NDK_MODULE_PATH=$NDK_HOME/sources
-    export ANDROID_NDK=$NDK_HOME
-
+```
+export NDK_HOME=$HOME/tar/android-ndk-r5b
+export LINUX_ANDROIDEABI=$NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin
+export PATH=$PATH:$NDK_HOME:$LINUX_ANDROIDEABI
+export NDK_MODULE_PATH=$NDK_HOME/sources
+export ANDROID_NDK=$NDK_HOME
+```
 ndk的环境配置好以后，在终端里面非jni目录输入ndk-build会有提示：```Android NDK: Could not find application project directory !    
 Android NDK: Please define the NDK_PROJECT_PATH variable to point to it.    
 /home/tyxm/tar/android-ndk-r5b/build/core/build-local.mk:85: *** Android NDK: Aborting    。 停止。``` 这时根据命令补全也能找到arm-linux-androideabi-gdb命令，这个就是我们等会调试core dump要用的命令。
